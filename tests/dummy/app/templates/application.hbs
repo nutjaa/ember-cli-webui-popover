@@ -1,3 +1,43 @@
-<h2 id="title">Welcome to Ember</h2>
+<h4>Normal Link</h4>
+<a href="#" id="test001">shop pop</a>
+{{#webui-popover for="test001" title="test001"}}
+	<p>popover content</p>
+{{/webui-popover}}
 
+<a href="#" id="test002">shop pop</a>
+{{#webui-popover for="test002" title="test002"}}
+	<p>This is my world</p>
+{{/webui-popover}}
+
+<hr/>
+<h4>Textbox Link</h4>
+<input type="text" id="test003" title="test003"/>
+{{#webui-popover for="test003" title="test003"}}
+	<p>Input popup more more more more</p>
+{{/webui-popover}}
+<hr/>
+<h4>Textbox Same width fix height</h4>
+<input type="text" id="test004" title="test004" style="width:50%"/>
+{{#webui-popover for="test004" sameWidth=true placement="bottom" height="200"}}
+	<table>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Nut Chanyong</td>
+			</tr>
+		</tbody>
+	</table>
+{{/webui-popover}}
+<hr/>
+<h4>Handle Bar Test</h4>
+{{input value=test05}}{{test05}}<a href="#" id="test005">shop pop</a>
+{{#webui-popover for="test005" title="test001"}}
+	<p>test005 value={{test05}}</p><a {{action "test05"}}>click</a>
+{{/webui-popover}}
 {{outlet}}
