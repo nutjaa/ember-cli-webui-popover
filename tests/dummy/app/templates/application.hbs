@@ -38,6 +38,13 @@
 <h4>Handle Bar Test</h4>
 {{input value=test05}}{{test05}}<a href="#" id="test005">shop pop</a>
 {{#webui-popover for="test005" title="test001"}}
-	<p>test005 value={{test05}}</p><a {{action "test05"}}>click</a>
+	<p>test005 value={{test05}}</p><a {{action "test05"}}>close</a>
 {{/webui-popover}}
+<hr/>
+<h4>Manul</h4>
+<a  id="test006" {{action "show_manual"}}>Show</a>{{test06_isShow}}
+{{#webui-popover for="test006" title="test006" isShow=test06_isShow  }}
+	WWWWWWWWWWWWWWWWWWWW<a {{action "test06"}}>close</a>
+{{/webui-popover}}
+
 {{outlet}}
