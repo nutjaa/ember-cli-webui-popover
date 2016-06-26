@@ -23,6 +23,7 @@ export default Ember.Component.extend({
     // Add implicit target
     let comp = this ;
     let options = {} ;
+    let $document = $(document);
     options['title'] = this.get('title');
     if(this.get('placement')){
       options['placement'] = this.get('placement');
@@ -36,6 +37,8 @@ export default Ember.Component.extend({
     options['padding'] = false ;
     if(this.get('triggerMethod')){
       options['trigger'] = this.get('triggerMethod');
+    }else{
+      //options['trigger'] = 'manual' ;
     }
 
     if(this.get('isShow') !== null){
@@ -47,8 +50,25 @@ export default Ember.Component.extend({
       };
     }
 
+
     Ember.$('#'+this.get('for')).webuiPopover(options);
-    //console.debug(this.get('for'));
+    /*
+    Ember.$('#'+this.get('for')).on('click',function(){
+      console.debug(Ember.$(this).webuiPopover());
+      Ember.$(this).webuiPopover('show');
+    });
+
+    Ember.$('#'+this.get('for')).on('focus',function(){
+      //Ember.$(this).webuiPopover('show');
+    });
+
+    Ember.$('#'+this.get('for')).focusout(function() {
+      //Ember.$(this).webuiPopover('hide');
+    });
+    */
+
+
+    //Ember.$('#'+this.get('for')).webuiPopover('show');
 
   }) ,
 
